@@ -6,8 +6,8 @@ img_path = os.getcwd() + "/1.png"
 
 @retry(stop_max_attempt_number=5)
 def check_in_91():
+    driver = get_web_driver()
     try:
-        driver = get_web_driver()
         driver.get("https://www.91tvg.com")
         driver.find_element_by_xpath("//*[@name='username']").send_keys(username)
         driver.find_element_by_xpath("//*[@name='password']").send_keys(password)
@@ -28,8 +28,8 @@ def check_in_91():
     except:
         raise
     finally:
-        return 0
-        #driver.quit()
+        #return 0
+        driver.quit()
 
 if __name__ == '__main__':
     check_in_91()
