@@ -28,7 +28,7 @@ def check_in_91():
     except:
         raise
     finally:
-        driver.quit()
+        #driver.quit()
 
 if __name__ == '__main__':
     check_in_91()
